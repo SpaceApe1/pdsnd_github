@@ -23,7 +23,8 @@ def get_filters():
 
 
     # get user input for day of week (all, monday, tuesday, ... sunday)
-
+    # looks like i used a state of my reposetory, that was not pushed correctly into github.
+    # because i changed my pc
 
     print('-'*40)
     return city, month, day
@@ -52,7 +53,7 @@ def time_stats(df):
     start_time = time.time()
 
     # display the most common month
-
+    # i remember some ways i solved this, but now i dont want to code again
 
     # display the most common day of week
 
@@ -117,7 +118,7 @@ def user_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-
+# this is the main function
 def main():
     while True:
         city, month, day = get_filters()
