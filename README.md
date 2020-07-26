@@ -8,6 +8,9 @@ Replace the Project Title
 ### Description
 Describe what your project is about and what it does
 
+The project is about the data analysis of a bikeshare companys data with python. 
+It lets you explore the data of three citys by a defined set of filters.
+
 ### Files used
 Include the files used
 
