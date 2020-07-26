@@ -2,7 +2,7 @@
 Include the date you created this project and README file.
 2020.07.26
 
-### Bikeshare python project - my first project
+### Bikeshare python project - my first python project
 Replace the Project Title
 
 ### Description
