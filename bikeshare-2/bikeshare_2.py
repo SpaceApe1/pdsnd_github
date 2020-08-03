@@ -204,23 +204,7 @@ def trip_duration_stats(df):
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
 
-    """
-    # first approach without using trip duration cloum (just oversaw)
-    # display total travel time
-    df['End Time'] = pd.to_datetime(df['End Time'])
-    df['Travel Time'] = df['End Time'] - df['Start Time']
-    df['Travel Time'] = df['Travel Time']/np.timedelta64(1, 's')
-
-    # print('total travel time in seconds: {}.'.format(df['Travel Time'].sum()))
-    total_travel_time = seconds_to_readable_date(df['Travel Time'].sum())
-    print('The total travel time was: {}.'.format(total_travel_time))
-
-    # display mean travel time
-    mean_travel_time = seconds_to_readable_date(df['Travel Time'].mean())
-    print('The mean travel time was: {}.'.format(mean_travel_time))
-    """
-
-    # display total travel time
+     # display total travel time
     ttt = seconds_to_readable_date(df['Trip Duration'].sum())
     print('The total travel time was: {}.'.format(ttt))
     # display mean travel time
