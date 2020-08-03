@@ -17,6 +17,7 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!')
+
     # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     print('We need to set some filter. Lets start with the city! \n')
     
@@ -176,6 +177,7 @@ def station_stats(df):
     print('-'*40)
 
 def seconds_to_readable_date(seconds):
+    """Make the seconds of rental time a little more human readable."""
     # min = 60
     # hour = 60 * 60 = 3600
     # day = 60 * 60 * 24 = 86400
@@ -192,11 +194,11 @@ def seconds_to_readable_date(seconds):
     second = round((seconds - ((year * 31536025.92) + (week * 604800) + (day * 86400) + (hour * 3600) + (minit * 60))), 2)
 
     if week == 0:
-        return ('{} days, {} hours, {} minutes and {} seconds'.format(day, hour, minit, second))
+        return ('{} days {} hours {} minutes {} seconds'.format(day, hour, minit, second))
     elif year == 0:
-        return ('{} weeks, {} days, {} hours, {} minutes and {} seconds'.format(week, day, hour, minit, second))
+        return ('{} weeks {} days {} hours {} minutes {} seconds'.format(week, day, hour, minit, second))
     else:
-        return ('{} years, {} weeks, {} days, {} hours, {} minutes and {} seconds'.format(year, week, day, hour, minit, second))
+        return ('{} years {} weeks {} days {} hours {} minutes {} seconds'.format(year, week, day, hour, minit, second))
 
 def trip_duration_stats(df):
     """Displays statistics on the total and average trip duration."""
@@ -204,7 +206,7 @@ def trip_duration_stats(df):
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
 
-     # display total travel time
+    # display total travel time
     ttt = seconds_to_readable_date(df['Trip Duration'].sum())
     print('The total travel time was: {}.'.format(ttt))
     # display mean travel time
@@ -260,7 +262,7 @@ def user_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-
+# this is the actual mail function that runns all costum functions
 def main():
     while True:
         city, month, day = get_filters()
