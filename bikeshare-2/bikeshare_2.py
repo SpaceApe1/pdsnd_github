@@ -17,6 +17,7 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!')
+
     # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     print('We need to set some filter. Lets start with the city! \n')
     
@@ -176,6 +177,7 @@ def station_stats(df):
     print('-'*40)
 
 def seconds_to_readable_date(seconds):
+    """Make the seconds of rental time a little more human readable."""
     # min = 60
     # hour = 60 * 60 = 3600
     # day = 60 * 60 * 24 = 86400
@@ -203,22 +205,6 @@ def trip_duration_stats(df):
 
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
-
-    """
-    # first approach without using trip duration cloum (just oversaw)
-    # display total travel time
-    df['End Time'] = pd.to_datetime(df['End Time'])
-    df['Travel Time'] = df['End Time'] - df['Start Time']
-    df['Travel Time'] = df['Travel Time']/np.timedelta64(1, 's')
-
-    # print('total travel time in seconds: {}.'.format(df['Travel Time'].sum()))
-    total_travel_time = seconds_to_readable_date(df['Travel Time'].sum())
-    print('The total travel time was: {}.'.format(total_travel_time))
-
-    # display mean travel time
-    mean_travel_time = seconds_to_readable_date(df['Travel Time'].mean())
-    print('The mean travel time was: {}.'.format(mean_travel_time))
-    """
 
     # display total travel time
     ttt = seconds_to_readable_date(df['Trip Duration'].sum())
@@ -276,7 +262,7 @@ def user_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-
+# this is the actual mail function that runns all costum functions
 def main():
     while True:
         city, month, day = get_filters()
