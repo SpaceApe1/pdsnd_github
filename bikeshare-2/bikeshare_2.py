@@ -17,6 +17,7 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!')
+
     # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     print('We need to set some filter. Lets start with the city! \n')
     
@@ -128,6 +129,7 @@ def time_stats(df):
     """Displays statistics on the most frequent times of travel."""
 
     print('\nCalculating The Most Frequent Times of Travel...\n')
+    # set filters
     start_time = time.time()
     months = ['january', 'february', 'march', 'april', 'may', 'june']
     days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']   
@@ -176,6 +178,7 @@ def station_stats(df):
     print('-'*40)
 
 def seconds_to_readable_date(seconds):
+    """Make the seconds of rental time a little more human readable."""
     # min = 60
     # hour = 60 * 60 = 3600
     # day = 60 * 60 * 24 = 86400
@@ -204,7 +207,7 @@ def trip_duration_stats(df):
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
 
-     # display total travel time
+    # display total travel time
     ttt = seconds_to_readable_date(df['Trip Duration'].sum())
     print('The total travel time was: {}.'.format(ttt))
     # display mean travel time
@@ -260,7 +263,7 @@ def user_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-
+# this is the actual mail function that runns all costum functions
 def main():
     while True:
         city, month, day = get_filters()
