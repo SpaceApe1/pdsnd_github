@@ -192,11 +192,11 @@ def seconds_to_readable_date(seconds):
     second = round((seconds - ((year * 31536025.92) + (week * 604800) + (day * 86400) + (hour * 3600) + (minit * 60))), 2)
 
     if week == 0:
-        return ('{} days {} hours {} minutes {} seconds'.format(day, hour, minit, second))
+        return ('{} days, {} hours, {} minutes and {} seconds'.format(day, hour, minit, second))
     elif year == 0:
-        return ('{} weeks {} days {} hours {} minutes {} seconds'.format(week, day, hour, minit, second))
+        return ('{} weeks, {} days, {} hours, {} minutes and {} seconds'.format(week, day, hour, minit, second))
     else:
-        return ('{} years {} weeks {} days {} hours {} minutes {} seconds'.format(year, week, day, hour, minit, second))
+        return ('{} years, {} weeks, {} days, {} hours, {} minutes and {} seconds'.format(year, week, day, hour, minit, second))
 
 def trip_duration_stats(df):
     """Displays statistics on the total and average trip duration."""
